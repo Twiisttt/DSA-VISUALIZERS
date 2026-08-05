@@ -45,7 +45,9 @@ function AlgorithmSection() {
             and dequeue.
           </p>
 
+          <Link to="/queue">
           <button>Explore Queue →</button>
+          </Link>
         </div>
 
 

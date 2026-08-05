@@ -7,6 +7,7 @@ import Hero from "./components/Hero";
 import AlgorithmSection from "./components/AlgorithmSection";
 
 import Stack from "./pages/Stack";
+import Queue from "./pages/Queue";
 
 function Home() {
   return (
@@ -23,11 +24,11 @@ function App() {
     <BrowserRouter>
       <Routes>
 
-        {/* Home Page */}
         <Route path="/" element={<Home />} />
 
-        {/* Stack Visualizer Page */}
         <Route path="/stack" element={<Stack />} />
+
+        <Route path="/queue" element={<Queue />} />
 
       </Routes>
     </BrowserRouter>
