@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function AlgorithmSection() {
   return (
     <section id="algorithms" className="algorithms">
@@ -15,43 +17,64 @@ function AlgorithmSection() {
 
       <div className="algorithm-grid">
 
+        {/* STACK */}
         <div className="algorithm-card">
           <div className="card-icon">📚</div>
+
           <h3>Stack</h3>
+
           <p>
             Understand LIFO operations including push,
             pop and peek visually.
           </p>
-          <button>Explore Stack →</button>
+
+          <Link to="/stack">
+            <button>Explore Stack →</button>
+          </Link>
         </div>
 
+
+        {/* QUEUE */}
         <div className="algorithm-card">
           <div className="card-icon">📥</div>
+
           <h3>Queue</h3>
+
           <p>
             Visualize FIFO operations including enqueue
             and dequeue.
           </p>
+
           <button>Explore Queue →</button>
         </div>
 
+
+        {/* SORTING */}
         <div className="algorithm-card">
           <div className="card-icon">📊</div>
+
           <h3>Sorting</h3>
+
           <p>
             Watch sorting algorithms compare and move
             elements step by step.
           </p>
+
           <button>Explore Sorting →</button>
         </div>
 
+
+        {/* SEARCHING */}
         <div className="algorithm-card">
           <div className="card-icon">🔍</div>
+
           <h3>Searching</h3>
+
           <p>
             Understand how searching algorithms find
             elements efficiently.
           </p>
+
           <button>Explore Searching →</button>
         </div>
 
