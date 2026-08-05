@@ -62,7 +62,9 @@ function AlgorithmSection() {
             elements step by step.
           </p>
 
+          <Link to="/sorting">
           <button>Explore Sorting →</button>
+          </Link>
         </div>
 
 

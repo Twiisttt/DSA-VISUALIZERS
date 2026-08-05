@@ -8,6 +8,7 @@ import AlgorithmSection from "./components/AlgorithmSection";
 
 import Stack from "./pages/Stack";
 import Queue from "./pages/Queue";
+import Sorting from "./pages/Sorting";
 
 function Home() {
   return (
@@ -29,6 +30,8 @@ function App() {
         <Route path="/stack" element={<Stack />} />
 
         <Route path="/queue" element={<Queue />} />
+
+        <Route path="/sorting" element={<Sorting />} />
 
       </Routes>
     </BrowserRouter>
