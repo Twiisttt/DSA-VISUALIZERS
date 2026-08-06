@@ -1,89 +1,403 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
 * {
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
+html {
+  scroll-behavior: smooth;
 }
 
-.app {
-  min-height: 100vh;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.15), transparent 35%),
-    radial-gradient(circle at 80% 30%, rgba(168, 85, 247, 0.12), transparent 35%),
-    #080b14;
+body {
+  margin: 0;
 
+  background: #070a12;
   color: #f8fafc;
+
   font-family: Inter, Arial, sans-serif;
 }
 
+button,
+input {
+  font-family: inherit;
+}
 
-/* ---------------- NAVBAR ---------------- */
+a {
+  text-decoration: none;
+}
+
+
+/* =========================================
+   APP
+========================================= */
+
+.app {
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at 18% 18%,
+      rgba(79, 70, 229, 0.14),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 82% 28%,
+      rgba(124, 58, 237, 0.11),
+      transparent 32%
+    ),
+    #070a12;
+
+  color: #f8fafc;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
 
 .navbar {
+  width: 100%;
   height: 72px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  padding: 0 7%;
+  padding: 0 6%;
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 
-  background: rgba(8, 11, 20, 0.75);
-  backdrop-filter: blur(12px);
+  background: rgba(7, 10, 18, 0.88);
+
+  border-bottom:
+    1px solid rgba(148, 163, 184, 0.09);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.02),
+    0 8px 30px rgba(0, 0, 0, 0.12);
 }
+
+
+/* =========================================
+   LOGO
+========================================= */
 
 .logo {
   display: flex;
   align-items: center;
   gap: 10px;
 
-  font-size: 20px;
+  color: #f8fafc;
+
+  font-size: 18px;
   font-weight: 700;
+
+  letter-spacing: -0.4px;
+
+  text-decoration: none;
+
+  transition: opacity 0.2s ease;
+}
+
+.logo:hover {
+  color: #f8fafc;
+  text-decoration: none;
+
+  opacity: 0.9;
 }
 
 .logo-icon {
   color: #818cf8;
+
+  font-size: 19px;
+  font-weight: 800;
 }
+
+
+/* =========================================
+   NAVIGATION LINKS
+========================================= */
 
 .nav-links {
   display: flex;
+  align-items: center;
+
   gap: 32px;
 }
 
 .nav-links a {
+  position: relative;
+
+  padding: 26px 0;
+
   color: #94a3b8;
+
+  font-size: 13px;
+  font-weight: 500;
+
   text-decoration: none;
 
-  font-size: 14px;
-
-  transition: 0.2s;
+  transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
-  color: white;
+  color: #f8fafc;
 }
 
-.login-btn {
-  padding: 9px 20px;
 
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 8px;
+/* Small underline animation */
 
-  background: transparent;
-  color: white;
+.nav-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 18px;
+
+  width: 0;
+  height: 2px;
+
+  transform: translateX(-50%);
+
+  border-radius: 10px;
+
+  background: #818cf8;
+
+  transition: width 0.2s ease;
+}
+
+.nav-links a:hover::after {
+  width: 18px;
+}
+
+
+/* =========================================
+   NAV AUTH
+========================================= */
+
+.nav-auth {
+  display: flex;
+  align-items: center;
+}
+
+
+/* =========================================
+   PROFILE BUTTON
+========================================= */
+
+.profile-btn {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 7px 11px 7px 7px;
+
+  border:
+    1px solid rgba(148, 163, 184, 0.12);
+
+  border-radius: 11px;
+
+  background:
+    rgba(15, 23, 42, 0.62);
+
+  color: #f8fafc;
+
+  text-decoration: none;
 
   cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.login-btn:hover {
-  background: rgba(255, 255, 255, 0.08);
+.profile-btn:hover {
+  background:
+    rgba(79, 70, 229, 0.1);
+
+  border-color:
+    rgba(129, 140, 248, 0.3);
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.16);
+
+  text-decoration: none;
 }
 
 
-/* ---------------- HERO ---------------- */
+/* PROFILE AVATAR */
+
+.avatar {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 9px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #4f46e5,
+      #7c3aed
+    );
+
+  color: white;
+
+  font-size: 15px;
+
+  box-shadow:
+    0 5px 15px rgba(79, 70, 229, 0.25);
+}
+
+
+/* PROFILE TEXT */
+
+.profile-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  line-height: 1.3;
+}
+
+.profile-text span {
+  color: #f1f5f9;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.profile-text small {
+  margin-top: 2px;
+
+  color: #64748b;
+
+  font-size: 10px;
+}
+
+.profile-arrow {
+  margin-left: 3px;
+
+  color: #64748b;
+
+  font-size: 17px;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.profile-btn:hover .profile-arrow {
+  color: #a5b4fc;
+
+  transform: translateX(2px);
+}
+
+
+/* =========================================
+   LOGIN / SIGNUP NAVBAR
+========================================= */
+
+.auth-buttons {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+}
+
+.nav-login-btn {
+  padding: 9px 16px;
+
+  border:
+    1px solid rgba(148, 163, 184, 0.15);
+
+  border-radius: 8px;
+
+  background:
+    rgba(255, 255, 255, 0.02);
+
+  color: #cbd5e1;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.nav-login-btn:hover {
+  color: #ffffff;
+
+  border-color:
+    rgba(129, 140, 248, 0.4);
+
+  background:
+    rgba(99, 102, 241, 0.06);
+}
+
+.nav-signup-btn {
+  padding: 10px 17px;
+
+  border: none;
+  border-radius: 8px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #4f46e5,
+      #6366f1
+    );
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 5px 18px rgba(79, 70, 229, 0.2);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.nav-signup-btn:hover {
+  color: white;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 8px 24px rgba(79, 70, 229, 0.3);
+}
+
+
+/* =========================================
+   HERO
+========================================= */
 
 .hero {
   min-height: calc(100vh - 72px);
@@ -99,18 +413,24 @@ body {
 }
 
 .hero-badge {
+  margin-bottom: 25px;
+
   padding: 7px 14px;
 
-  border: 1px solid rgba(129, 140, 248, 0.25);
+  border:
+    1px solid rgba(129, 140, 248, 0.22);
+
   border-radius: 50px;
 
-  background: rgba(99, 102, 241, 0.08);
+  background:
+    rgba(99, 102, 241, 0.07);
 
   color: #a5b4fc;
 
-  font-size: 13px;
+  font-size: 12px;
+  font-weight: 500;
 
-  margin-bottom: 25px;
+  letter-spacing: 0.2px;
 }
 
 .hero h1 {
@@ -118,7 +438,10 @@ body {
 
   margin: 0;
 
+  color: #f8fafc;
+
   font-size: clamp(45px, 7vw, 80px);
+
   line-height: 1.05;
 
   letter-spacing: -3px;
@@ -127,14 +450,17 @@ body {
 .hero h1 span {
   display: block;
 
-  background: linear-gradient(
-    90deg,
-    #818cf8,
-    #c084fc
-  );
+  background:
+    linear-gradient(
+      90deg,
+      #818cf8,
+      #a78bfa,
+      #c084fc
+    );
 
   -webkit-background-clip: text;
   background-clip: text;
+
   -webkit-text-fill-color: transparent;
 }
 
@@ -145,156 +471,211 @@ body {
 
   color: #94a3b8;
 
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.7;
 }
 
+
+/* =========================================
+   HERO BUTTONS
+========================================= */
+
 .hero-buttons {
   display: flex;
-  gap: 15px;
+
+  gap: 12px;
 }
 
 .primary-btn,
 .secondary-btn {
-  padding: 13px 24px;
+  padding: 12px 22px;
 
-  border-radius: 9px;
+  border-radius: 8px;
 
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
 
   cursor: pointer;
 
-  transition: 0.2s;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .primary-btn {
   border: none;
 
-  background: #6366f1;
+  background:
+    linear-gradient(
+      135deg,
+      #4f46e5,
+      #6366f1
+    );
+
   color: white;
+
+  box-shadow:
+    0 6px 20px rgba(79, 70, 229, 0.22);
 }
 
 .primary-btn:hover {
   transform: translateY(-2px);
-  background: #4f46e5;
+
+  box-shadow:
+    0 10px 28px rgba(79, 70, 229, 0.32);
 }
 
 .secondary-btn {
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border:
+    1px solid rgba(148, 163, 184, 0.14);
 
-  background: rgba(255, 255, 255, 0.03);
-  color: white;
+  background:
+    rgba(255, 255, 255, 0.025);
+
+  color: #e2e8f0;
 }
 
 .secondary-btn:hover {
-  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+
+  border-color:
+    rgba(129, 140, 248, 0.3);
+
+  background:
+    rgba(99, 102, 241, 0.06);
 }
 
 
-/* ---------------- MOBILE ---------------- */
-
-@media (max-width: 750px) {
-
-  .nav-links {
-    display: none;
-  }
-
-  .navbar {
-    padding: 0 20px;
-  }
-
-  .hero h1 {
-    letter-spacing: -2px;
-  }
-
-  .hero p {
-    font-size: 16px;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    width: 100%;
-    max-width: 300px;
-  }
-}
-
-/* ---------------- ALGORITHMS ---------------- */
+/* =========================================
+   ALGORITHMS SECTION
+========================================= */
 
 .algorithms {
   padding: 100px 7%;
-  background: #080b14;
+
+  background: #070a12;
 }
 
 .section-heading {
   max-width: 650px;
+
   margin: 0 auto 55px;
+
   text-align: center;
 }
 
 .section-heading span {
   color: #818cf8;
-  font-size: 12px;
+
+  font-size: 11px;
   font-weight: 700;
+
   letter-spacing: 2px;
 }
 
 .section-heading h2 {
   margin: 12px 0;
 
+  color: #f8fafc;
+
   font-size: 38px;
+
   letter-spacing: -1px;
 }
 
 .section-heading p {
   color: #94a3b8;
+
   line-height: 1.7;
 }
 
+
+/* =========================================
+   ALGORITHM GRID
+========================================= */
+
 .algorithm-grid {
   max-width: 1100px;
+
   margin: auto;
 
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 22px;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
 }
+
+
+/* =========================================
+   ALGORITHM CARDS
+========================================= */
 
 .algorithm-card {
   padding: 30px;
 
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border:
+    1px solid rgba(148, 163, 184, 0.09);
+
   border-radius: 14px;
 
-  background: rgba(255, 255, 255, 0.025);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(15, 23, 42, 0.55),
+      rgba(10, 15, 28, 0.7)
+    );
 
-  transition: 0.25s;
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.12);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .algorithm-card:hover {
   transform: translateY(-5px);
 
-  border-color: rgba(129, 140, 248, 0.4);
+  border-color:
+    rgba(129, 140, 248, 0.3);
 
-  background: rgba(99, 102, 241, 0.05);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(79, 70, 229, 0.08),
+      rgba(15, 23, 42, 0.72)
+    );
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.18);
 }
 
 .card-icon {
-  font-size: 28px;
   margin-bottom: 18px;
+
+  font-size: 28px;
 }
 
 .algorithm-card h3 {
   margin: 0 0 10px;
 
-  font-size: 21px;
+  color: #f1f5f9;
+
+  font-size: 20px;
 }
 
 .algorithm-card p {
   color: #94a3b8;
 
-  line-height: 1.6;
   font-size: 14px;
+
+  line-height: 1.65;
 }
 
 .algorithm-card button {
@@ -302,101 +683,117 @@ body {
   padding: 0;
 
   border: none;
+
   background: transparent;
 
   color: #a5b4fc;
 
+  font-size: 13px;
   font-weight: 600;
+
   cursor: pointer;
+
+  transition: color 0.2s ease;
 }
 
 .algorithm-card button:hover {
-  color: white;
+  color: #ffffff;
 }
 
+
+/* =========================================
+   TABLET / MOBILE
+========================================= */
+
 @media (max-width: 750px) {
-  .algorithm-grid {
-    grid-template-columns: 1fr;
+
+  .navbar {
+    height: 64px;
+
+    padding: 0 18px;
   }
+
+  .logo {
+    font-size: 15px;
+  }
+
+  .logo-icon {
+    font-size: 16px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .profile-text {
+    display: none;
+  }
+
+  .profile-arrow {
+    display: none;
+  }
+
+  .profile-btn {
+    padding: 6px;
+  }
+
+  .avatar {
+    width: 33px;
+    height: 33px;
+  }
+
+  .auth-buttons {
+    gap: 6px;
+  }
+
+  .nav-login-btn,
+  .nav-signup-btn {
+    padding: 8px 11px;
+
+    font-size: 11px;
+  }
+
+
+  /* HERO */
+
+  .hero {
+    min-height: calc(100vh - 64px);
+
+    padding: 60px 20px;
+  }
+
+  .hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .hero-buttons {
+    width: 100%;
+    max-width: 300px;
+
+    flex-direction: column;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+  }
+
+
+  /* ALGORITHMS */
 
   .algorithms {
     padding: 70px 20px;
   }
-}
 
-.profile-btn {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  .algorithm-grid {
+    grid-template-columns: 1fr;
+  }
 
-  padding: 7px 12px;
-
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-
-  background: rgba(255, 255, 255, 0.04);
-  color: white;
-
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.profile-btn:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(129, 140, 248, 0.35);
-}
-
-.avatar {
-  width: 35px;
-  height: 35px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-
-  background: linear-gradient(135deg, #6366f1, #a855f7);
-}
-
-.profile-text {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.profile-text span {
-  font-size: 13px;
-  font-weight: 600;
-}
-
-.profile-text small {
-  color: #94a3b8;
-  font-size: 11px;
-}
-
-.profile-arrow {
-  color: #94a3b8;
-}
-
-.profile-btn {
-  text-decoration: none;
-}
-
-.logo {
-  text-decoration: none;
-  color: inherit;
-}
-
-.logo:hover {
-  text-decoration: none;
-  color: inherit;
-}
-
-.profile-btn {
-  text-decoration: none;
-}
-
-.profile-btn:hover {
-  text-decoration: none;
+  .section-heading h2 {
+    font-size: 30px;
+  }
 }
