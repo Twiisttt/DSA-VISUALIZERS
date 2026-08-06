@@ -1,4 +1,6 @@
 import { useState } from "react";
+import PracticeQuestions from "../components/PracticeQuestions";
+import queueProblems from "../data/queueProblems";
 import "./Queue.css";
 
 function Queue() {
@@ -233,6 +235,12 @@ function Queue() {
         </div>
 
       </div>
+
+      <PracticeQuestions
+      title="Queue Practice Problems"
+      topic="queue"
+      problems={queueProblems}
+      />
 
     </div>
   );

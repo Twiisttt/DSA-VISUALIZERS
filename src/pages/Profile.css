@@ -1,0 +1,546 @@
+/* ========================================
+   PROFILE PAGE
+======================================== */
+
+.profile-page {
+  min-height: 100vh;
+  padding: 70px 20px;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(59, 130, 246, 0.14),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(139, 92, 246, 0.12),
+      transparent 35%
+    ),
+    #070b14;
+
+  color: #f8fafc;
+}
+
+
+/* ========================================
+   MAIN CONTAINER
+======================================== */
+
+.profile-container {
+  width: 100%;
+  max-width: 1050px;
+
+  margin: 0 auto;
+}
+
+
+/* ========================================
+   PROFILE HEADER
+======================================== */
+
+.profile-header {
+  display: flex;
+  align-items: center;
+
+  gap: 22px;
+
+  padding: 30px;
+
+  margin-bottom: 30px;
+
+  background: rgba(15, 23, 42, 0.85);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ========================================
+   AVATAR
+======================================== */
+
+.profile-avatar {
+  width: 72px;
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #7c3aed
+  );
+
+  color: white;
+
+  font-size: 28px;
+  font-weight: 700;
+
+  box-shadow:
+    0 8px 25px rgba(79, 70, 229, 0.35);
+}
+
+
+/* ========================================
+   USER INFORMATION
+======================================== */
+
+.profile-label {
+  display: inline-block;
+
+  margin-bottom: 7px;
+
+  color: #60a5fa;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+}
+
+
+.profile-header h1 {
+  margin: 0 0 6px;
+
+  font-size: 29px;
+  font-weight: 700;
+
+  color: #f8fafc;
+}
+
+
+.profile-header p {
+  margin: 0;
+
+  color: #94a3b8;
+
+  font-size: 14px;
+}
+
+
+/* ========================================
+   PROGRESS SECTION
+======================================== */
+
+.profile-progress-section {
+  padding: 30px;
+
+  background: rgba(15, 23, 42, 0.78);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ========================================
+   PROGRESS HEADING
+======================================== */
+
+.progress-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+}
+
+
+.progress-heading span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #60a5fa;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 1.6px;
+}
+
+
+.progress-heading h2 {
+  margin: 0;
+
+  font-size: 23px;
+
+  color: #f8fafc;
+}
+
+
+.progress-percent {
+  padding: 8px 14px;
+
+  border-radius: 20px;
+
+  background: rgba(59, 130, 246, 0.1);
+
+  border: 1px solid rgba(59, 130, 246, 0.25);
+
+  color: #60a5fa;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+
+/* ========================================
+   PROGRESS BAR
+======================================== */
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+
+  margin-bottom: 30px;
+
+  overflow: hidden;
+
+  background: #111827;
+
+  border-radius: 20px;
+}
+
+
+.progress-fill {
+  height: 100%;
+
+  border-radius: 20px;
+
+  background: linear-gradient(
+    90deg,
+    #2563eb,
+    #7c3aed
+  );
+
+  transition: width 0.4s ease;
+}
+
+
+/* ========================================
+   PROGRESS CARDS
+======================================== */
+
+.progress-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+
+.progress-card {
+  padding: 22px;
+
+  background: #0b1220;
+
+  border: 1px solid #1e293b;
+
+  border-radius: 14px;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.progress-card:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(96, 165, 250, 0.45);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+
+.progress-card h3 {
+  margin: 0 0 8px;
+
+  color: #f8fafc;
+
+  font-size: 18px;
+}
+
+
+.progress-card p {
+  margin: 0 0 18px;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+
+.progress-card span {
+  display: inline-block;
+
+  padding: 6px 10px;
+
+  border-radius: 6px;
+
+  background: rgba(148, 163, 184, 0.08);
+
+  border: 1px solid rgba(148, 163, 184, 0.15);
+
+  color: #94a3b8;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+
+/* ========================================
+   LOGOUT BUTTON
+======================================== */
+
+.logout-button {
+  display: block;
+
+  margin: 25px 0 0 auto;
+
+  padding: 11px 22px;
+
+  border: 1px solid rgba(248, 113, 113, 0.25);
+
+  border-radius: 9px;
+
+  background: rgba(239, 68, 68, 0.08);
+
+  color: #f87171;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.logout-button:hover {
+  background: rgba(239, 68, 68, 0.14);
+
+  border-color: rgba(248, 113, 113, 0.45);
+
+  transform: translateY(-2px);
+}
+
+
+/* ========================================
+   LOADING / ERROR
+======================================== */
+
+.profile-status {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #070b14;
+
+  color: #94a3b8;
+
+  font-size: 15px;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 750px) {
+
+  .profile-page {
+    padding: 40px 16px;
+  }
+
+
+  .progress-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 500px) {
+
+  .profile-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding: 24px;
+  }
+
+
+  .profile-avatar {
+    width: 60px;
+    height: 60px;
+
+    font-size: 24px;
+  }
+
+
+  .profile-header h1 {
+    font-size: 24px;
+  }
+
+
+  .profile-progress-section {
+    padding: 22px;
+  }
+
+
+  .progress-heading {
+    align-items: flex-end;
+  }
+
+
+  .progress-heading h2 {
+    font-size: 20px;
+  }
+
+
+  .logout-button {
+    width: 100%;
+  }
+
+}
+
+/* ========================================
+   OVERALL PROBLEM COUNT
+======================================== */
+
+.overall-problem-count {
+  margin: -18px 0 28px;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+}
+
+
+/* ========================================
+   TOPIC CARD HEADING
+======================================== */
+
+.topic-card-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+
+.topic-card-heading h3 {
+  margin: 0;
+}
+
+
+.topic-card-heading strong {
+  color: #60a5fa;
+
+  font-size: 14px;
+}
+
+
+/* ========================================
+   TOPIC PROGRESS BAR
+======================================== */
+
+.topic-progress-bar {
+  width: 100%;
+  height: 6px;
+
+  margin-bottom: 14px;
+
+  overflow: hidden;
+
+  background: #111827;
+
+  border-radius: 20px;
+}
+
+
+.topic-progress-fill {
+  height: 100%;
+
+  border-radius: 20px;
+
+  background: linear-gradient(
+    90deg,
+    #2563eb,
+    #7c3aed
+  );
+
+  transition: width 0.3s ease;
+}
+
+
+/* ========================================
+   CONTINUE BUTTON
+======================================== */
+
+.continue-button {
+  width: 100%;
+
+  margin-top: 18px;
+
+  padding: 10px 14px;
+
+  border: 1px solid #263449;
+  border-radius: 8px;
+
+  background: #111827;
+
+  color: #cbd5e1;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.continue-button:hover {
+  border-color: #3b82f6;
+
+  color: #60a5fa;
+
+  transform: translateY(-2px);
+}

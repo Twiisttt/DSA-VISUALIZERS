@@ -1,3 +1,4 @@
+import ProtectedRoute from "./components/ProtectedRoute";
 import "./App.css";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -10,6 +11,9 @@ import Stack from "./pages/Stack";
 import Queue from "./pages/Queue";
 import Sorting from "./pages/Sorting";
 import Searching from "./pages/Searching";
+import Login from "./pages/Login";
+import Profile from "./pages/Profile";
+import Signup from "./pages/Signup";
 
 function Home() {
   return (
@@ -22,6 +26,7 @@ function Home() {
 }
 
 function App() {
+
   return (
     <BrowserRouter>
       <Routes>
@@ -35,6 +40,12 @@ function App() {
         <Route path="/sorting" element={<Sorting />} />
 
         <Route path="/searching" element={<Searching />} />
+
+        <Route path="/login" element={<Login />} />
+
+        <Route path="/profile" element={<ProtectedRoute><Profile /> </ProtectedRoute>} />
+
+        <Route path="/signup" element={<Signup />}/>
 
       </Routes>
     </BrowserRouter>

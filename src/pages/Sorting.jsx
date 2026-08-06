@@ -1,4 +1,6 @@
 import { useState, useRef } from "react";
+import PracticeQuestions from "../components/PracticeQuestions";
+import sortingProblems from "../data/sortingProblems";
 import "./Sorting.css";
 
 function Sorting() {
@@ -808,6 +810,12 @@ function Sorting() {
         </div>
 
       </div>
+
+      <PracticeQuestions
+      title="Sorting Practice Problems"
+      topic="sorting"
+      problems={sortingProblems}
+      />
 
     </div>
   );
