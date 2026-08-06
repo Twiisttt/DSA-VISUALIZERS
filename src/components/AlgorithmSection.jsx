@@ -79,7 +79,9 @@ function AlgorithmSection() {
             elements efficiently.
           </p>
 
+          <Link to="/searching">
           <button>Explore Searching →</button>
+          </Link>
         </div>
 
       </div>
