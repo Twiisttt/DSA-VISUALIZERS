@@ -1,36 +1,26 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function Navbar() {
+  const location = useLocation();
 
-  // Check whether JWT exists
+  // Re-check token whenever route changes
   const token = localStorage.getItem("token");
-
-  const isLoggedIn = !!token;
+  const isLoggedIn = Boolean(token);
 
   return (
     <nav className="navbar">
 
-      {/* =========================
-          LOGO
-      ========================== */}
-
+      {/* LOGO */}
       <Link to="/" className="logo">
-
         <span className="logo-icon">
           &lt;/&gt;
         </span>
 
-        <span>
-          DSA Visualizer
-        </span>
-
+        <span>DSA Visualizer</span>
       </Link>
 
 
-      {/* =========================
-          NAVIGATION
-      ========================== */}
-
+      {/* NAVIGATION */}
       <div className="nav-links">
 
         <Link to="/">
@@ -48,15 +38,10 @@ function Navbar() {
       </div>
 
 
-      {/* =========================
-          AUTH SECTION
-      ========================== */}
-
+      {/* AUTH SECTION */}
       <div className="nav-auth">
 
         {isLoggedIn ? (
-
-          // USER IS LOGGED IN
 
           <Link
             to="/profile"
@@ -68,19 +53,10 @@ function Navbar() {
               👤
             </div>
 
-
             <div className="profile-text">
-
-              <span>
-                My Profile
-              </span>
-
-              <small>
-                View progress
-              </small>
-
+              <span>My Profile</span>
+              <small>View progress</small>
             </div>
-
 
             <span className="profile-arrow">
               ›
@@ -90,8 +66,6 @@ function Navbar() {
 
         ) : (
 
-          // USER IS NOT LOGGED IN
-
           <div className="auth-buttons">
 
             <Link
@@ -100,7 +74,6 @@ function Navbar() {
             >
               Login
             </Link>
-
 
             <Link
               to="/signup"
