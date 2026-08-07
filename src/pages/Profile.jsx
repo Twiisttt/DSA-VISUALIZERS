@@ -102,7 +102,7 @@ function Profile() {
         // =====================================
 
         const progressResponse = await fetch(
-          "http://localhost:5000/api/progress",
+          `${API_URL}/api/progress`,
           {
             method: "GET",
 
